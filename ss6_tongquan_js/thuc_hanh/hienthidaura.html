@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành javascript</title>
+</head>
+<body>
+    <h3>Bài tập 1</h3>
+    <button type="button" onclick="showMessage1();">Click Me!</button>
+    <hr>
+    <h3>Bài tập 2</h3>
+    <div id="messageDiv"></div>
+    <button type="button" onclick="showMessage2();">Click Me!</button>
+    <hr>
+    <h3>Bài tập 3</h3>
+    <button type="button" onclick="showMessage3()">Click Me!</button>
+    <hr>
+    <h3>Bài tập 4</h3>
+    <button type="button" onclick="showMessage4()">Click Me!</button>
+</body>
+</html>
+<script>
+    function showMessage1(){
+        alert('Xin chào!');
+    }
+    function showMessage2(){
+        document.getElementById('messageDiv').innerText = 'Xin chào!';
+    }
+    function showMessage3() {
+        document.write('Xin chào');
+    }
+    function showMessage4() {
+        console.log('Xin chào');
+    }
+</script>
