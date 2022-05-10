@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th colspan="4" >Caculator</th>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="number" id="number1"></td>
+            <td colspan="2"><input type="number" id="number2"></td>
+        </tr>
+        <tr>
+            <td><button type="submit" onclick="addition()">Addition(+)</button></td>
+            <td><button type="submit" onclick="subtraction()">Subtraction(-)</button></td>
+            <td><button type="submit" onclick="multiplication()">Multiplication(*)</button></td>
+            <td><button type="submit" onclick="division()">Division(/)</button></td>
+        </tr>
+        <tr>
+            <td colspan="4"><p id="result"></p></td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    function addition() {
+        let a = parseFloat(document.getElementById("number1").value);
+        let b = parseFloat(document.getElementById("number2").value);
+        let result = a + b;
+
+        document.getElementById("result").innerText = "Result Addition: " + result;
+    }
+    function subtraction() {
+        let a = parseFloat(document.getElementById("number1").value);
+        let b = parseFloat(document.getElementById("number2").value);
+        let result = a - b;
+
+        document.getElementById("result").innerText = "Result Subtraction: " + result;
+    }
+    function multiplication() {
+        let a = parseFloat(document.getElementById("number1").value);
+        let b = parseFloat(document.getElementById("number2").value);
+        let result = a * b;
+
+        document.getElementById("result").innerText = "Result Multiplication: " + result;
+    }
+    function division() {
+        let a = parseFloat(document.getElementById("number1").value);
+        let b = parseFloat(document.getElementById("number2").value);
+        let result = a / b;
+
+        document.getElementById("result").innerText = "Result Division: " + result;
+    }
+</script>

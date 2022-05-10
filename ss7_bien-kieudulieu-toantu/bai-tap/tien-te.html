@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tiền Tệ</title>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="number" id="number"></td>
+            <td>
+                <select id="currency1">
+                    <option value="usd">USD</option>
+                    <option value="vnd">VNĐ</option>
+                </select>
+            </td>
+            <td>
+                <select id="currency2">
+                    <option value="vnd">VNĐ</option>
+                    <option value="usd">USD</option>
+                </select>
+            </td>
+            <td>
+                <button type="submit" onclick="currencyFrom()">Convert</button>
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="4"><p id="result"></p></td>
+        </tr>
+    </table>
+
+</body>
+</html>
+<script>
+    function currencyFrom() {
+        let money = document.getElementById("number").value;
+        let currency1 = document.getElementById("currency1").value;
+        let currency2 = document.getElementById("currency2").value;
+        let result = "";
+
+        if (currency1 == "vnd" && currency2 == "usd") {
+            result = "Result: " + "$" + (money / 23000);
+        }
+        if (currency1 == "vnd" && currency2 == "vnd") {
+            result = "Result: " + money + "đ";
+        }
+        if (currency1 == "usd" && currency2 == "vnd") {
+            result = "Result: " + (money * 23000) + "đ";
+        }
+        if (currency1 == "usd" && currency2 == "usd") {
+            result = "Result: " + "$" + money;
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
