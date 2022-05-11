@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chỉ số BMI</title>
+</head>
+<body>
+<p><input type="number" id="weight" placeholder="Nhập cân nặng"></p>
+<p><input type="number" id="height" placeholder="Nhập chiều cao"></p>
+<button type="submit" onclick="bodyMassIndex()">Click</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    function bodyMassIndex() {
+        let weight = parseFloat(document.getElementById("weight").value);
+        let height = parseFloat(document.getElementById("height").value);
+        let bmi = weight / (height * height);
+        let result = "";
+        if (bmi < 18.5) {
+            result = "Chỉ số BMI là: " + bmi + " Bị thiếu cân. Đề nghị bồi bổ sức khoẻ!";
+        } else if (bmi < 25) {
+            result = "Chỉ số BMI là: " + bmi + " Bình thường."
+        } else if (bmi < 30) {
+            result = "Chỉ số BMI là: " + bmi + " Bị thừa cân. Đề nghị tập thể dục!"
+        } else {
+            result = "Chỉ số BMI là: " + bmi + " Bị béo phì. Đề nghị bớt ăn + tập thể dục thường xuyên!"
+        }
+        document.getElementById("result").innerText = result;
+    }
+</script>
