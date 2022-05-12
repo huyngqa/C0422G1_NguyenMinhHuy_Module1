@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra tuổi của người</title>
+</head>
+<body>
+    <h3>Kiểm tra tuổi của người</h3>
+    <p><input type="number" id="age" placeholder="nhập tuổi"></p>
+    <p><input type="submit" value="kiểm tra" onclick="checkAge();"></p>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function checkAge() {
+        let age = document.getElementById("age").value;
+        if(age < 120 && age > 0) {
+            document.getElementById("result").innerText = "Đây là tuổi của 1 người.";
+        } else {
+            document.getElementById("result").innerText = "Đây không phải là tuổi của 1 người.";
+        }
+    }
+</script>

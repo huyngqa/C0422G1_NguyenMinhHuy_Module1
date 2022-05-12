@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi ngân hàng</title>
+</head>
+<body>
+    <h3>Lãi suất ngân hàng</h3
+    <p><input type="number" id="money" placeholder="Nhập số tiền bạn"></p>
+    <p><input type="number" id="year" placeholder="Nhập số năm bạn muốn gửi"></p>
+    <p><input type="submit" value="kiểm tra" onclick="calculatorMoneyBank();"></p>
+    <p>
+        lãi suất 10% 1 năm
+    </p>
+    <hr>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function calculatorMoneyBank() {
+        let money = parseFloat(document.getElementById("money").value);
+        let year = parseFloat(document.getElementById("year").value);
+        if(money < 0 || year <0) {
+            document.getElementById("result").innerText  = "Bạn nhập sai giá trị.";
+        } else {
+            let totalMoney = money * Math.pow((1+0.1),year);
+            document.getElementById("result").innerText = "Số tiền bạn sẽ nhận được: " + totalMoney;
+        }
+    }
+</script>

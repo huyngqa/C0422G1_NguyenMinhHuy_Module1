@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích tam giác vuông</title>
+</head>
+<body>
+    <h3>Diện tích tam giác vuông</h3>
+    <p><input type="number" id="canhA" placeholder="Nhập cạnh bên của tam giác vuông"></p>
+    <p><input type="number" id="canhB" placeholder="Nhập cạnh bên của tam giác vuông"></p>
+    <p><input type="submit" value="kết quả" onclick="areaTriangle();"></p>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function areaTriangle() {
+        let edgeA = parseFloat(document.getElementById("canhA").value);
+        let edgeB = parseFloat(document.getElementById("canhB").value);
+        if (edgeA <= 0 || edgeB <= 0) {
+            document.getElementById("result").innerText = "Cạnh phải lớn hơn 0.";
+        } else {
+            let area = (edgeA * edgeB) / 2;
+            document.getElementById("result").innerText = "Diện tích tam giác vuông là: " + area;
+        }
+    }
+</script>

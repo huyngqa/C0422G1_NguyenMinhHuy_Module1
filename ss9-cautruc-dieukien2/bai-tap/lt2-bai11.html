@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuế thu nhập cá nhân</title>
+</head>
+<body>
+    <h3>Thuế thu nhập cá nhân</h3>
+    <p><input type="number" id="money" placeholder="Nhập thu nhập 1 tháng của bạn"></p>
+    <p><input type="submit" value="kiểm tra" onclick="calculatorTax();"></p>
+    <p>
+        Thu nhập < 10 triệu đồng/tháng: thuế 0%.<br>
+        Từ 10 đến chưa tới 20 triệu đồng/tháng: thuế 5%.<br>
+        Từ 20 chưa tới 50 triệu đồng/tháng: thuế 10%.<br>
+        Từ 50 chưa tới 80 triệu đồng/tháng: thuế 15%.<br>
+        Từ 80 triệu đồng trờ lên: thuế 20%.
+    </p>
+    <hr>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function calculatorTax() {
+        let money = parseInt(document.getElementById("money").value);
+        let result = "";
+        if(money < 0) {
+            result = "Bạn nhập sai giá trị.";
+        } else {
+            let moneyTax = 0;
+            if(money < 10000000) {
+                result = "Bạn không cần phải đóng thuế";
+            } else if (money < 20000000) {
+                moneyTax = money * 5 / 100;
+                result = "Tiền thuế bạn phải đóng là: " + moneyTax;
+            } else if(money < 50000000) {
+                moneyTax = money * 10 / 100;
+                result = "Tiền thuế bạn phải đóng là: " + moneyTax;
+            } else if(money < 80000000) {
+                moneyTax = money * 15 / 100;
+                result = "Tiền thuế bạn phải đóng là: " + moneyTax;
+            } else {
+                moneyTax = money * 20 / 100;
+                result = "Tiền thuế bạn phải đóng là: " + moneyTax;
+            }
+        }
+        document.getElementById("result").innerText = result;
+    }
+</script>

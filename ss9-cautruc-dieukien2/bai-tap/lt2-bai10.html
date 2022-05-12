@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giá điện</title>
+</head>
+<body>
+    <h3>Tính tiền điện của 1 hộ gia đình</h3>
+    <p><input type="number" id="kwh" placeholder="Nhập vào kwh sử dụng"></p>
+    <p><input type="submit" value="kiểm tra" onclick="checkMoneyEletric();"></p>
+    <p>
+        Từ 0 - 100kWh: 1500đ/kWh.<br>
+        Từ 101 - 200kWh: 2000đ/kWh.<br>
+        Từ 201 - 300kWh: 2500/kWh.<br>
+        Từ 301 - 400kWh: 3000/kWh.<br>
+        Từ 401kWh trờ lên: 3500/kWh.
+    </p>
+    <hr>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function checkMoneyEletric() {
+        let kWh = parseFloat(document.getElementById("kwh").value);
+        let result = "";
+        if(kWh < 0) {
+            result = "Bạn nhập sai giá trị.";
+        } else {
+            let money = 0;
+            if(kWh <= 100) {
+                money = kWh * 1500;
+                result = "Tiền điện tháng này của bạn là: " + money + "đ";
+            } else if (kWh <= 200) {
+                money = (kWh - 100) * 2000 + (100 * 1500);
+                result = "Tiền điện tháng này của bạn là: " + money + "đ";
+            } else if (kWh <= 300) {
+                money = (kWh - 200) * 2500 + (100 * 2000) + (100 * 1500);
+                result = "Tiền điện tháng này của bạn là: " + money + "đ";
+            } else if (kWh <= 400) {
+                money = (kWh - 300) * 3000 + (100 * 2500) + (100 * 2000) + (100 * 1500);
+                result = "Tiền điện tháng này của bạn là: " + money + "đ";
+            } else {
+                money = (kWh - 400) * 3500 + (100 * 3000) + (100 * 2500) + (100 * 2000) + (100 * 1500);
+                result = "Tiền điện tháng này của bạn là: " + money + "đ";
+            }
+        }
+        document.getElementById("result").innerText = result;
+    }
+</script>

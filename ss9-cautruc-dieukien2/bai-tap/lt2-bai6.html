@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phương trình bậc 1</title>
+</head>
+<body>
+    <h3>Giải phương trình bậc 1: ax + b = 0</h3>
+    <p><input type="number" id="numberA" placeholder="Nhập a"></p>
+    <p><input type="number" id="numberB" placeholder="Nhập b"></p>
+    <p><input type="submit" value="Kết quả" onclick="equation();"></p>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function equation() {
+        let numberA = parseFloat(document.getElementById("numberA").value);
+        let numberB = parseFloat(document.getElementById("numberB").value);
+        let result = "";
+        if (numberA == 0 && numberB == 0) {
+            result = "Phương trình vô số nghiệm";
+        } else if (numberA == 0 && numberB != 0) {
+            result = "Phương trình vô nghiệm";
+        } else {
+            result = "Nghiệm của phương trình là: " + (-numberB) / numberA;
+        }
+        document.getElementById("result").innerText = result;
+    }
+</script>

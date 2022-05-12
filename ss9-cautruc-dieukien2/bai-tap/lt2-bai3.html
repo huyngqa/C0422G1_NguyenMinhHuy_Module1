@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích hình vuông</title>
+</head>
+<body>
+    <h3>Diện tích hình vuông</h3>
+    <p><input type="number" id="canhhinhvuong" placeholder="Nhập cạnh của hình vuông"></p>
+    <p><input type="submit" value="Kết quả" onclick="areaSquare();"></p>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function areaSquare() {
+        let edgeSquare = parseFloat(document.getElementById("canhhinhvuong").value);
+        if(edgeSquare <= 0) {
+            document.getElementById("result").innerText = "Cạnh bạn vừa nhập không đúng. Cạnh phải lớn hơn 0.";
+        } else {
+            let area = edgeSquare * edgeSquare;
+            document.getElementById("result").innerText = "Diện tích hình vuông là: " + area;
+        }
+    }
+</script>
