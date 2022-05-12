@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tuổi học sinh</title>
+</head>
+<body>
+    <h3>Kiểm tra tuổi vào lớp 10 của một học sinh.</h3>
+    <input type="number" id="age" placeholder="Nhập tuổi của học sinh">
+    <input type="submit" value="Kết quả" onclick="testAge();" >
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function testAge() {
+        let age = document.getElementById("age").value;
+        let result = "";
+        if(age == 16) {
+            result = "Học sinh đủ điều kiện vào lớp 10";
+        } else if(age > 16) {
+            result = "Khuyên nên đi học nghề.";
+        } else if(age <= 0) {
+            result = "Chưa ra đời";
+        }
+        else {
+            result = "Học sinh không đủ điều kiện vào lớp 10";
+        }
+        document.getElementById("result").innerText = result;
+    }
+</script>

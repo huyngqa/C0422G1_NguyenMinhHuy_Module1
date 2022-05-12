@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập 1 bài 1</title>
+</head>
+<body>
+    <p><input id="numberA" type="number" placeholder="Nhập số a"></p>
+    <p><input id="numberB" type="number" placeholder="Nhập số b"></p>
+    <p><input type="submit" value="Kết quả" onclick="divisible();"></p>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function divisible() {
+        let numberA = parseInt(document.getElementById("numberA").value);
+        let numberB = parseInt(document.getElementById("numberB").value);
+        let result = "";
+        if (numberA % numberB == 0) {
+            result = numberA + " chia hết cho " + numberB;
+        } else {
+            result = numberA + " không chia hết cho " + numberB;
+        }
+        document.getElementById("result").innerText = result;
+    }
+</script>

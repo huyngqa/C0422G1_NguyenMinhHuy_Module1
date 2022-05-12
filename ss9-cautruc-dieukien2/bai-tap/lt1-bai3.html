@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số</title>
+</head>
+<body>
+    <h3>Kiểm tra số nguyên</h3>
+    <input type="number" id="number" placeholder="Nhập một số">
+    <input type="submit" value="Kiểm tra" onclick="testNumber();">
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function testNumber() {
+        let number = document.getElementById("number").value;
+        let result = "";
+        if(number > 0) {
+            result = "Số bạn vừa nhập lớn hơn 0!";
+        } else if (number == 0) {
+            result = "Số bạn vừa nhập là số 0!";
+        } else {
+            result = "Số bạn vừa nhập nhỏ hơn 0!";
+        }
+        document.getElementById("result").innerText = result;
+    }
+</script>

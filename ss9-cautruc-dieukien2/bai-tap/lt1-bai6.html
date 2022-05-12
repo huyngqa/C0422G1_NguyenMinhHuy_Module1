@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính hoa hồng</title>
+</head>
+<body>
+<h3>Tính doanh số bán hàng.</h3>
+<p><input type="number" id="sales" placeholder="Nhập doanh số bán hàng tháng này của bạn."></p>
+<p><input type="submit" value="kiểm tra" onclick="checkSales();"></p>
+<p>
+    Doanh số từ 100triệu trờ lên: +20%. <br>
+    Doanh số từ 50triệu đến nhỏ hơn 100triệu: +10%. <br>
+    Doanh số nhỏ hơn 50triệu: +5%. <br>
+</p>
+<hr>
+<b>Kết quả</b>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    function checkSales() {
+        let sales = parseInt(document.getElementById("sales").value);
+        let moneyBonus = 0;
+        let result = "";
+
+        if (sales < 0) {
+            result = "Bạn nhập số tiền không hợp lệ.";
+        } else {
+            if (sales >= 100000000) {
+                moneyBonus = sales * 20 / 100;
+                result = "Hoa hồng tháng này bạn nhận được là: " + moneyBonus + "đ";
+            } else if (sales >= 50000000) {
+                moneyBonus = sales * 10 / 100;
+                result = "Hoa hồng tháng này bạn nhận được là: " + moneyBonus + "đ";
+            } else {
+                moneyBonus = sales * 5 / 100;
+                result = "Hoa hồng tháng này bạn nhận được là: " + moneyBonus + "đ";
+            }
+        }
+
+        document.getElementById("result").innerText = result;
+    }
+</script>

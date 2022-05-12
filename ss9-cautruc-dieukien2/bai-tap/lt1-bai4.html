@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số lớn nhất</title>
+</head>
+<body>
+<p><input type="number" id="numberA" placeholder="Nhập số thứ nhất"></p>
+<p><input type="number" id="numberB" placeholder="Nhập số thứ hai"></p>
+<p><input type="number" id="numberC" placeholder="Nhập số thứ ba"></p>
+<p><input type="submit" value="kiểm tra" onclick="maxNumber();"></p>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    function maxNumber() {
+        let numberA = parseInt(document.getElementById("numberA").value);
+        let numberB = parseInt(document.getElementById("numberB").value);
+        let numberC = parseInt(document.getElementById("numberC").value);
+        let result = "";
+        if (numberA >= numberB) {
+            if (numberA >= numberC) {
+                result = "Số lớn nhất trong 3 số bạn vừa nhập là: " + numberA;
+            } else {
+                result = "Số lớn nhất trong 3 số bạn vừa nhập là: " + numberC;
+            }
+        } else {
+            if (numberB >= numberC) {
+                result = "Số lớn nhất trong 3 số bạn vừa nhập là: " + numberB;
+            } else {
+                result = "Số lớn nhất trong 3 số bạn vừa nhập là: " + numberC;
+            }
+        }
+        document.getElementById("result").innerText = result;
+    }
+</script>

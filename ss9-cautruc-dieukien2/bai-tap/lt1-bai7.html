@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính cước điện thoại</title>
+</head>
+<body>
+    <h3>Cước tiền điện của 1 hộ gia đình</h3>
+    <p><input type="number" id="minute" placeholder="Nhập số phút của bạn đã dùng trong tháng"></p>
+    <p><input type="submit" value="kiểm tra" onclick="checkMoneyRatesPhone();"></p>
+    <p>
+        20 phút đầu tiên: 500đ/1p.<br>
+        30 phút tiếp theo: 350đ/1p.<br>
+        Sau 50 phút đầu tiên: 200đ/1p.
+    </p>
+    <hr>
+    <b>Kết quả</b>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function checkMoneyRatesPhone() {
+        let minute = parseInt(document.getElementById("minute").value);
+        let totalMoney = 0;
+        let result = "";
+        if(minute<0) {
+            result = "Bạn nhập phút không hợp lệ!";
+        } else {
+            if (minute <= 20) {
+                totalMoney = minute * 500;
+                result = "Tổng cước điện thoại tháng này của bạn là: " + totalMoney;
+            } else if (minute <= 50) {
+                totalMoney = (minute - 20) * 350 + 20 * 500;
+                result = "Tổng cước điện thoại tháng này của bạn là: " + totalMoney;
+            } else {
+                totalMoney = (minute - 50) * 200 + (20 * 500) + (30 * 350);
+                result = "Tổng cước điện thoại tháng này của bạn là: " + totalMoney;
+            }
+        }
+        document.getElementById("result").innerText = result;
+    }
+</script>

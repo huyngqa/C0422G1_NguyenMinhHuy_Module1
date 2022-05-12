@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp hạng học sinh</title>
+</head>
+<body>
+<h3>Xếp hạng học sinh</h3>
+    <p><input type="text" id="name" placeholder="Nhập tên học sinh"></p>
+    <p><input type="number" id="diemkiemtra" placeholder="Nhập điểm bài kiểm tra của học sinh"></p>
+    <p><input type="number" id="diemgiuaki" placeholder="Nhập điểm thi giữa kìa của học sinh"></p>
+    <p><input type="number" id="diemcuoiki" placeholder="Nhập điểm thi cuối kì của học sinh"></p>
+    <p><input type="submit" value="kiểm tra" onclick="rankStudent();"></p>
+    <p>
+        Bài kiểm tra nhân hệ số 1<br>
+        Bài thi giữa kì nhân hệ số 2<br>
+        Bài thi cuối kì nhân hệ số 3<br>
+    </p>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function rankStudent() {
+        let nameStudent = document.getElementById("name").value;
+        let scoreTest = parseFloat(document.getElementById("diemkiemtra").value);
+        let scoreMidExam = parseFloat(document.getElementById("diemgiuaki").value);
+        let scoreLastExam = parseFloat(document.getElementById("diemcuoiki").value);
+
+        let result = "";
+        if(scoreTest < 0 || scoreMidExam < 0 || scoreLastExam < 0 ) {
+            result = "Bạn nhập điểm không hợp lệ.";
+        } else if (scoreTest > 10 || scoreMidExam > 10 || scoreLastExam > 10) {
+            result = "Bạn nhập điểm không hợp lệ.";
+        } else {
+            let totalScore = scoreTest + (scoreMidExam * 2) + (scoreLastExam * 3);
+            let avgScore = totalScore / 6;
+            if (avgScore >= 9) {
+                result = "Học sinh " + nameStudent + "có điểm trung bình là: " +avgScore + " và học lực Xuất sắc";
+            } else if (avgScore >= 8) {
+                result = "Học sinh " + nameStudent + "có điểm trung bình là: " +avgScore + " và học lực Giỏi";
+            } else if (avgScore >= 6.5) {
+                result = "Học sinh " + nameStudent + "có điểm trung bình là: " +avgScore + " và học lực Khá";
+            } else if (avgScore >= 5) {
+                result = "Học sinh " + nameStudent + "có điểm trung bình là: " +avgScore + " và học lực Trung Bình";
+            } else {
+                result = "Học sinh " + nameStudent + "có điểm trung bình là: " +avgScore + " và học lực Yếu";
+            }
+        }
+        document.getElementById("result").innerText = result;
+    }
+</script>
