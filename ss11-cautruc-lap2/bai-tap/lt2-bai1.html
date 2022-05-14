@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>In dãy Fibonanci</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let n = parseInt(prompt("Nhập số lượng của dãy fibonanci"));
+    let f0 = 0;
+    let f1 = 1;
+    let fn = f0 + f1;
+    for (let i = 0; i < n; i++) {
+        if (i == 0 || i == 1) {
+            document.write(i + "<br>"); // 0, 1
+        } else {
+            document.write(fn + "<br>");
+            f0 = f1;
+            f1 = fn;
+            fn = f0 + f1;
+        }
+    }
+</script>

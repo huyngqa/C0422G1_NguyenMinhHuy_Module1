@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Tính tổng 20 số đầu của dãy fibonanci</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let f0 = 0, f1 = 1;
+    let fn = f0 + f1;
+    let sum = 0;
+    for (let i = 0; i < 20; i++) {
+        if (i == 0 || i == 1) {
+            sum = 1;
+        } else {
+            sum += fn;
+            f0 = f1;
+            f1 = fn;
+            fn = f0 + f1;
+        }
+    } document.write("Tổng của 20 số đầu tiên của dãy fibonanci là: " + sum);
+</script>

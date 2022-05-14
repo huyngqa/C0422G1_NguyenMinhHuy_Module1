@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let number = parseInt(prompt("Nhập n số nguyên tố đầu tiên"));
+    let count = 0;
+    let i = 2;
+    let tmp;
+    while (count < number) {
+        tmp = 0;
+        for (let j = 1; j <= i; j++) {
+            if (i % j == 0) {
+                tmp++;
+            }
+        }
+        if (tmp == 2) {
+            document.write(i + "<br>");
+            count++;
+        }
+        i++;
+    }
+</script>

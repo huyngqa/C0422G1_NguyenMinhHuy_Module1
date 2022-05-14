@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Game đoán số</title>
 </head>
 <body>
-$END$
+<input type="submit" value="Bắt đầu" onclick="startGame();">
 </body>
 </html>
+<script>
+    function startGame() {
+        let number = +prompt("Bạn muốn đoán trong khoảng bao nhiêu");
+        let random = Math.floor(Math.random() * (number + 1));
+        let inputNumber;
+
+        for (let i = 1; i <= 3; i++) {
+            inputNumber = +prompt("Nhập số bạn muốn đoán lần thứ: " + i);
+            if (random == inputNumber) {
+                alert("Bạn đoán đúng");
+                break
+            } else if (random < inputNumber) {
+                alert("Số bạn đoán nhỏ hơn");
+            } else {
+                alert("số bạn đoán lớn hơn");
+            }
+        }
+        if (random == inputNumber) {
+            document.write("Số bạn đoán đúng là: " + inputNumber + "<br>");
+        } else {
+            document.write("Bạn đã hết lượt chơi." + "<br>");
+        }
+        document.write("kết quả số random là: " + random);
+    }
+</script>

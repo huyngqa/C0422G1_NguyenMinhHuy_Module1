@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let temperature = prompt("Nhập nhiệt độ hiện tại");
+    while(temperature > 100 || temperature < 20) {
+            if (temperature > 100) {
+                temperature = prompt("Bạn nên giảm nhiệt độ");
+            } else{
+                temperature = prompt("Bạn nên tăng nhiệt độ");
+            }
+    }
+    document.write("Bạn đã điều chỉnh nhiệt độ hợp lí");
+</script>

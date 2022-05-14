@@ -2,9 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Vẽ tam giác bằng dấu sao</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    //hình 1
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j <= i; j++) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<hr>");
+    // hình 2
+    for (let i = 5; i > 0; i--) {
+        for (let j = i; j > 0; j--) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<hr>");
+    //hình 3
+    for (let i = 5; i > 0; i--) {
+        for (let j = i - 1; j > 0; j--) {
+            document.write("&nbsp;&nbsp;")
+        }
+        for (let j = 5; j >= i; j--) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<hr>");
+    // hình 4
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < i; j++) {
+            document.write("&nbsp;&nbsp;");
+        }
+        for (let j = i; j < 5; j++) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<hr>");
+
+</script>
