@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>Vòng lặp for</p>
+    <p>Thực hành 1</p>
+    <p id="demo"></p>
+    <hr>
+    <p>Thực hành 2</p>
+    <p><input type="number" id="number"></p>
+    <p><input type="submit" onclick="total();"></p>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    let text = "";
+    for (let i = 0; i < 5; i++) {
+        text += "The number is " + i + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+    let sum = 0;
+    function total() {
+        let n = parseInt(document.getElementById("number").value);
+        for(let i = 1; i <= n ; i++) {
+            sum += i;
+        }
+       alert(sum);
+    }
+</script>
