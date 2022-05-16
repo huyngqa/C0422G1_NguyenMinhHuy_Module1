@@ -7,14 +7,19 @@
 <body>
 <p><input type="number" id="money" placeholder="Nhập số tiền bạn muốn gửi"></p>
 <p><input type="number" id="month" placeholder="Nhập số tháng cho vay"></p>
-<p>Lãi suất 10%</p>
-<button type="submit">Kiểm tra</button>
+<p>Lãi suất 6%</p>
+<button type="submit" onclick="moneyBank();">Kiểm tra</button>
+<p id="result"></p>
 </body>
 </html>
 <script>
 function moneyBank() {
     let money = parseInt(document.getElementById("money").value);
     let month = parseInt(document.getElementById("month").value);
-    for(let i = )
+    for(let i = 0; i < month; i++) {
+        money += money * 6 / 100;
+    }
+    document.getElementById("result").innerText = "Tổng tiền sau " + month + " tháng gửi là: "
+                                                 + money + "đ";
 }
 </script>
