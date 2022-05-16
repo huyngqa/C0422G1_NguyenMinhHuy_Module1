@@ -15,12 +15,13 @@
     let tmp;
     while (count < number) {
         tmp = 0;
-        for (let j = 1; j <= i; j++) {
+        for (let j = 2; j < i; j++) {
             if (i % j == 0) {
                 tmp++;
+                break
             }
         }
-        if (tmp == 2) {
+        if (tmp == 0) {
             document.write(i + "<br>");
             count++;
         }
