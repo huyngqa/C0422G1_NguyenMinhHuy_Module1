@@ -12,19 +12,13 @@
     let str = prompt("Nhập vào một chuỗi");
     document.write("Chuỗi bạn nhập là: " + str);
     let tmp = 0;
-    for (let i = 0; i < str.length - 1; i++) {
-        if ((i == 0 && str[i] == " ") || (i == length - 1 && str[i] == " ")
-            || (str[i] == " " && str[i + 1] == " ")) {
-            str[i] = "";
-        } else if (str[i] == " ") {
-            tmp++;
+    let arr = str.split(" ");
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i] == "") {
+            continue;
         }
+        tmp++;
     }
-    if(str==" ") {
-        tmp = 0;
-        document.write("<br>Số lượng từ trong chuỗi của bạn là: " + tmp);
-    } else {
-        document.write("<br>Số lượng từ trong chuỗi của bạn là: " + (tmp+1));
-    }
+    document.write("<br>Chuỗi đó có " + tmp + " kí tự");
 
 </script>
