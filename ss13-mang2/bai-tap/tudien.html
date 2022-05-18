@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<h3>Từ điển dịch số tiếng anh</h3>
+<p>Dịch số tiếng anh.</p>
+<input type="text" id="number">
+<button type="button" onclick="dictionary();">Dịch</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    let arrEng = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
+    let arrVie = ["một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "mười"];
+
+    function dictionary() {
+        let result = "";
+        let trans = document.getElementById("number").value;
+        for (let i = 0; i < arrEng.length; i++) {
+            if (trans == arrEng[i]) {
+                result = arrVie[i];
+                document.getElementById("result").innerText = result;
+                break;
+            }
+        }
+        if (result == "") {
+            document.getElementById("result").innerText = "Chưa có dữ liệu để dịch.";
+        }
+    }
+</script>

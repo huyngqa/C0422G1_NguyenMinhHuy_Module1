@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let n = +prompt("Nhập độ dài của mảng");
+    let arr = new Array(n);
+    let tmp = 0;
+    for (let i = 0; i < n; i++) {
+        arr[i] = prompt("Nhập phần tử thứ " + i + " của mảng");
+        if (arr[i] % arr[i] == 0) {
+            tmp++;
+        }
+    }
+    alert("Bạn đã nhập xong các phần tử của mảng");
+    document.write("Mảng của bạn là: [" + arr + "]");
+    document.write("<br>Trong mảng bạn nhập có: " + tmp + " kí tự số");
+</script>
