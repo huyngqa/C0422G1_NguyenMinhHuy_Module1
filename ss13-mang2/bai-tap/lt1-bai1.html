@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let arr = [1,4,5,-3,0,12,10,3,16];
+    let tmp = 0;
+    let result = "";
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i] >= 10) {
+            tmp++;
+            result += arr[i] + " ";
+        }
+    }
+    document.write("Có " + tmp +
+        " phần tử trong mảng lớn hơn 10.<br>Các phần từ đó là: " + result);
+</script>

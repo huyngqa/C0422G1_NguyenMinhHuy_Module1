@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let arrA = new Array(10);
+    let arrB = new Array(10);
+    alert("Nhập mảng a với độ dài 10")
+    for (let i = 0; i < arrA.length; i++) {
+        arrA[i] = +prompt("Nhập giá trị của phần tử thứ: " + i);
+    }
+    alert("Bạn đã nhập xong mảng a");
+    alert("Nhập mảng b với độ dài 10")
+    for (let i = 0; i < arrA.length; i++) {
+        arrB[i] = +prompt("Nhập giá trị của phần tử thứ: " + i);
+    }
+    alert("Bạn đã nhập xong mảng b");
+    let arrC = [];
+    for (let i = 0; i < 20; i++) {
+        if (i < 10) {
+            arrC[i] = arrA[i];
+        } else {
+            arrC[i] = arrB[i - 10];
+        }
+    }
+    document.write("Mảng a là: [" + arrA + "]<br>");
+    document.write("Mảng b là: [" + arrB + "]<br>");
+    document.write("Mảng c là: [" + arrC + "]");
+</script>

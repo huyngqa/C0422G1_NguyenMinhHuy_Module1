@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let str = prompt("Nhập vào 1 chuỗi");
+    document.write("chuỗi bạn nhập là: " + str + "<br>");
+    let arr = [];
+    for (let i = 0; i < str.length; i++) {
+        arr[i] = str[i];
+    }
+    let tmp = 0;
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] == "-" && arr[i + 1] % arr[i + 1] == 0) {
+            tmp++;
+        }
+    }
+    document.write("Có: " + tmp + " số nguyên âm trong chuỗi");
+</script>

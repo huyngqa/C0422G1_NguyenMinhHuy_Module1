@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Bài 1</h3>
+<button type="button" onclick="exercise1();">Bài 1</button>
+<p id="bai1"></p>
+<hr>
+<h3>Bài 2</h3>
+<button type="button" onclick="exercise2();">Bài 2</button>
+<p id="bai2"></p>
+<hr>
+<h3>Bài 3</h3>
+<button type="button" onclick="exercise3();">Bài 3</button>
+<p id="bai3"></p>
+</body>
+</html>
+<script>
+    function exercise1() {
+        let myColor = ["Red", "Green", "White", "Black"];
+        document.getElementById("bai1").innerText = myColor.toString();
+    }
+
+    function exercise2() {
+        let arr = [];
+        let number = prompt("Nhập number");
+        for (let i = 0; i < number.length; i++) {
+            arr[i] = number[i];
+        }
+        for (let i = number.length - 1; i > 0; i--) {
+            if (arr[i] % 2 == 0 && arr[i - 1] % 2 == 0) {
+                arr.splice(i, 0, "-");
+            }
+        }
+        console.log(arr.join(""));
+        document.getElementById("bai2").innerHTML = arr.join("");
+    }
+
+    function exercise3() {
+        let upper = "ABCDEFGHIJKLMNOPQRSTVUWXYZ";
+        let lower = "abcdefghijklmnopqrstvuwxyz";
+        let str = prompt("Nhập vào 1 chuỗi.");
+        let arr = [];
+        arr = str.split("");
+        console.log(arr);
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < upper.length; j++) {
+                switch (arr[i]) {
+                    case upper[j]:
+                        arr[i] = arr[i].toLowerCase();
+                        break;
+                    case lower[j]:
+                        arr[i] = arr[i].toUpperCase();
+                        break;
+                }
+            }
+        }
+        document.getElementById("bai3").innerHTML = "Chuỗi bạn nhập là: " + str
+            + "<br>Chuỗi sau khi sửa là: " + arr.join("");
+    }
+</script>

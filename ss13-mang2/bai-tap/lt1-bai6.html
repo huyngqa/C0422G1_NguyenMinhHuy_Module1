@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let arr = new Array(10);
+    alert("Bạn hãy nhập vào 10 phần tử của mảng");
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = +prompt("Nhập giá trị của phần tử thứ: " + i);
+    }
+    alert("Bạn đã nhập xong 10 phần tử của mảng");
+    let result = "";
+    let v = +prompt("Nhập vào giá trị muốn tìm kiếm trong mảng.");
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i] == v) {
+            result = "V is in the array";
+            break;
+        } else {
+            result = "V is not in the array";
+        }
+    }
+    document.write(result);
+</script>

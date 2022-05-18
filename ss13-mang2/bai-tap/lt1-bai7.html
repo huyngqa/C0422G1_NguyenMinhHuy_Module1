@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let arr = new Array(10);
+    alert("Bạn hãy nhập vào 10 phần tử của mảng");
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = +prompt("Nhập giá trị của phần tử thứ: " + i);
+    }
+    alert("Bạn đã nhập xong 10 phần tử của mảng");
+    document.write("Mảng ban đầu: [" + arr + "]<br>");
+    let v = +prompt("Nhập giá trị bạn muốn kiểm tra")
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == v) {
+            for (let j = i; j < arr.length; j++) {
+                arr[j] = arr[j + 1];
+            }
+            arr[arr.length - 1] = 0;
+            i -=1;
+        }
+    }
+    document.write("Mảng sau khi sửa là: [" + arr + "]<br>");
+</script>

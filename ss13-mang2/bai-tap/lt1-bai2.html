@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let arr = [1, 4, -3, 0, 12, 10, 3, 16, -6, 11];
+    max = arr[0];
+    let tmp =0;
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+            tmp = i;
+        }
+    }
+    document.write("Phần tử lớn nhất trong mảng là: " + max +
+        " và nằm ở vị trí thứ: " + tmp);
+
+
+</script>
