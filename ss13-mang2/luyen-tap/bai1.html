@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let str = prompt("Nhập vào một chuỗi");
+    document.write("Chuỗi bạn nhập là: " + str + "<br>");
+    let c = prompt("Nhập kí tự bạn muốn kiểm tra");
+    document.write("Kí tự bạn nhập là: " + c + "<br>");
+    let tmp = 0;
+    for (let i = 0; i < str.length; i++) {
+        if(c == str[i]) {
+            tmp++;
+        }
+    }
+    document.write("Kí tự bạn nhập xuất hiện " + tmp + " trong chuỗi");
+</script>

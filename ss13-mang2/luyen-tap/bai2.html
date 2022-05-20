@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let n = +prompt("Nhập vào số nguyên n");
+    let result = 0;
+    for (let i = 1; i <= n ; i++) {
+        result += 1/(Math.pow(i,3));
+    }
+    document.write("Kết quả là: " + result);
+</script>

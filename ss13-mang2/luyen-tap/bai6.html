@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let n = +prompt("Nhập vào độ dài của mảng");
+    let arr = new Array(n);
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập vào phần tử thứ " + i + " của mảng");
+    }
+    document.write("Mảng bạn nhập là: [" + arr + "]");
+    for (let i = 0; i < arr.length - 1; i++) {
+        if(arr[i] + arr[i+1] == 20) {
+            arr[i] = 20;
+            arr[i+1] = 20;
+            i++;
+        }
+    }
+    document.write("<br>Mảng sau khi sửa là: [" + arr + "]");
+</script>

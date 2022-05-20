@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let f0 = 0;
+    let f1 = 1;
+    let fn = f0 + f1;
+    let result = "";
+    let tmp = 0;
+    while (fn < 10000) {
+        tmp = 0;
+        f0 = f1;
+        f1 = fn;
+        if (f0 + f1 >= 10000) {
+            break;
+        }
+        fn = f0 + f1;
+        for (let i = 2; i < fn; i++) {
+            if (fn % i == 0) {
+                tmp++;
+                break;
+            }
+        }
+        if (tmp == 0) {
+            document.write(fn + "<br>");
+        }
+
+    }
+</script>

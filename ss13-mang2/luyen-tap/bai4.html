@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let n = +prompt("Nhập vào độ dài của mảng");
+    let arr = new Array(n);
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập giá trị phần tử thứ " + i + " trong mảng");
+    }
+    document.write("Mảng bạn nhập vào là: [" + arr + "]<br>");
+    let count = 1;
+    let result = "";
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] != "") {
+            count = 1;
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    arr[j] = "";
+                    count++;
+                }
+            }
+            result += arr[i] + ":" + count + "<br>";
+        }
+    }
+    document.write(result);
+</script>
