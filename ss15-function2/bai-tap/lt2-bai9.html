@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let arr = ["a", "b", "q", "r", "w", "w", "b", "3", "3", "5", "w", "h", "s", "v", "s", "f", "d", "k"];
+    document.write("Mảng của bạn là: [" + arr + "]<br>");
+    let c = prompt("Nhập kí tự bạn muốn kiểm tra");
+    document.write(countChar(arr, c));
+
+    function countChar(arr, c) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (c == arr[i]) {
+                count++;
+            }
+        }
+        if (count == 0) {
+            return -1;
+        }
+        return "Kí tự " + c + " xuất hiện " + count + " lần trong mảng";
+    }
+</script>

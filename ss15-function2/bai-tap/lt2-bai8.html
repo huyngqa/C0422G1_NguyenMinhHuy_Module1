@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let arr = [1, 5, 62, 65, 3, -5, 4, 6, 8, 2];
+    document.write("Mảng của bạn là: [" + arr + "]");
+
+    document.write("<br>Mảng sau khi đảo là: [" + reverseArray(arr) + "]");
+
+    function reverseArray(arr) {
+        let first = 0;
+        let last = arr.length - 1;
+        while (first < last) {
+            let tmp = arr[first];
+            arr[first] = arr[last];
+            arr[last] = tmp;
+            first++;
+            last--;
+        }
+        return arr;
+    }
+</script>

@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let number = +prompt("Nhập vào một số không phải số nguyên âm");
+    document.write("Giai thừa của " + number + " là: " + factorial(number));
+
+    function factorial(n) {
+        if(n==0) return 1;
+        else if (n == 1)
+            return 1;
+        return n * factorial(n - 1);
+    }
+</script>

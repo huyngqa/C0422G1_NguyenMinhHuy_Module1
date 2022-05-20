@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let r = parseFloat(prompt("Nhập vào bán kính hình tròn:"));
+    document.write("Diện tích của hình tròn có bán kính: " + r +" là: " + calculateCircleArea(r).toFixed(3));
+    document.write("<br>Chu vi của hình tròn có bán kính: " + r +" là: " + calculateCirclePerimeter(r).toFixed(3));
+
+    function calculateCircleArea(radius) {
+        return radius * radius * Math.PI;
+    }
+
+    function calculateCirclePerimeter(radius) {
+        return 2 * radius * Math.PI;
+    }
+</script>

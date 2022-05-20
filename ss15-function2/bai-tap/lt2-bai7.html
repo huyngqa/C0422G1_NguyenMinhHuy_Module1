@@ -8,3 +8,19 @@
 
 </body>
 </html>
+<script>
+    let arg1 = +prompt("Nhập vào số thứ nhất");
+    let arg2 = +prompt("Nhập vào số thứ hai");
+    document.write("Trước khi swap: " + arg1 + " ," + arg2);
+
+    document.write("<br>Sau khi swap: ");
+    swapNumber(arg1, arg2);
+
+    function swapNumber(a, b) {
+        let tmp = a;
+        a = b;
+        b = tmp;
+        document.write(a);
+        document.write(", " + b);
+    }
+</script>

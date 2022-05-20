@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let number1 = +prompt("Nhập vào số thứ nhất");
+    let number2 = +prompt("Nhập vào số thứ 2");
+   alert(checkNumber(number1,number2));
+
+    function checkNumber(arg1, arg2) {
+        if(arg1 > arg2) {
+            return "Số thứ nhất lớn hơn số thứ 2";
+        } else {
+            return arg1 + " + "+ arg2 + " = " + (arg1 + arg2);
+        }
+    }
+</script>

@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let feet = parseFloat(prompt("Nhập vào giá trị feet"));
+    let meter = footToMeter(feet);
+    document.write(feet + "feet = " + meter + "meter<br>");
+
+    let m = parseFloat(prompt("Nhập vào giá trị met"));
+    let foot = meterToFoot(m);
+    document.write(m + "meter = " + foot + "feet<br>");
+
+    function footToMeter(foot) {
+        return 0.305 * foot;
+    }
+    function meterToFoot(meter) {
+        return 3.279 * meter;
+    }
+</script>

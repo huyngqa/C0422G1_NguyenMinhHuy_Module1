@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    document.write("<h3>Các số nguyên tố</h3>")
+    for (let i = 0; i <= 10000; i++) {
+        if (isPrime(i)) {
+            document.write(i + "<br>");
+        }
+    }
+    alert(isPrime(number));
+
+    function isPrime(number) {
+        if (number <= 1) {
+            return false;
+        } else {
+            for (let i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+</script>

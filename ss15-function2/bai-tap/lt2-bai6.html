@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let number = +prompt("Nhập vào một số");
+    alert(checkNumber(number));
+
+    function checkNumber(arg) {
+        if (arg > 0) {
+            return true;
+        } else if (arg == 0) {
+            return 0;
+        } else {
+            return false;
+        }
+    }
+</script>

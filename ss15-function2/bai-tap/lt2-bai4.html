@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let c = prompt("Nhập vào một kí tự");
+    alert(checkNumber(c));
+
+    function checkNumber(c) {
+        if(c=="0") {
+            return true;
+        }
+        return c % c == 0 ? true : false;
+    }
+</script>
