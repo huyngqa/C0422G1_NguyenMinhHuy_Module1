@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let str = prompt("Nhập vào một chuỗi");
+    alert(checkSymmetry(str));
+
+    function checkSymmetry(str) {
+        let tmp = str.length - 1;
+        for (let i = 0; i < str.length / 2; i++) {
+            if (str[i] != str[tmp - i]) {
+                return "Không phải chuỗi đối xứng";
+            }
+        }
+        return "Là chuỗi đối xứng";
+    }
+</script>
