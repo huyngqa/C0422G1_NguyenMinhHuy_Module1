@@ -10,21 +10,23 @@
 </html>
 <script>
     class Temperature {
-        constructor(c) {
-            this.c = c;
+        constructor(celsius) {
+            this.celsius = celsius;
         }
 
         transferFromCtoF() {
-            return (9 * this.c) / 5 + 32;
+            return (9 * this.celsius) / 5 + 32;
         }
-        transferFromCtoKevin(){
-            return this.c + 273.15;
+
+        transferFromCtoKevin() {
+            return this.celsius + 273.15;
         }
     }
-    let c = parseFloat(prompt("nhập vào độ C"));
-    let temp = new Temperature(c);
-    let f = temp.transferFromCtoF();
-    let k = temp.transferFromCtoKevin();
 
-    document.write("Độ F là: " + f + " và độ K là: " + k);
+    let celsius = parseFloat(prompt("nhập vào độ C"));
+    let temp = new Temperature(celsius);
+    let fahrenheit = temp.transferFromCtoF();
+    let kevin = temp.transferFromCtoKevin();
+
+    document.write("Độ F là: " + fahrenheit + " và độ K là: " + kevin);
 </script>
