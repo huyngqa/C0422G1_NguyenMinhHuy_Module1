@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Temperature {
+        constructor(c) {
+            this.c = c;
+        }
+
+        transferFromCtoF() {
+            return (9 * this.c) / 5 + 32;
+        }
+        transferFromCtoKevin(){
+            return this.c + 273.15;
+        }
+    }
+    let c = parseFloat(prompt("nhập vào độ C"));
+    let temp = new Temperature(c);
+    let f = temp.transferFromCtoF();
+    let k = temp.transferFromCtoKevin();
+
+    document.write("Độ F là: " + f + " và độ K là: " + k);
+</script>
