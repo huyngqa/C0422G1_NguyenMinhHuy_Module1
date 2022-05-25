@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        isEmpty() {
+            if (this.weight <= 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        decrease() {
+            if (this.isEmpty()) {
+                alert("Hết táo");
+            } else {
+                this.weight--;
+            }
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        isMale() {
+            if (this.gender == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        getGender() {
+            if (this.isMale()) {
+                return "nam";
+            } else {
+                return "nữ";
+            }
+        }
+
+        checkApple(apple) {
+            return apple.isEmpty();
+        }
+
+        eat(apple) {
+            if (apple.getWeight() > 0) {
+                apple.decrease();
+                this.weight++;
+            } else {
+                alert("Hết táo");
+            }
+        }
+
+        say(string) {
+            return string;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        toString() {
+            return this.name + " giới tính là " + this.getGender() + " có cân nặng: " + this.weight + "<br>";
+        }
+    }
+
+    let apple = new Apple(10);
+    let adam = new Human("Adam", 0, 90);
+    let eva = new Human("Eva", 1, 50);
+    let result = "";
+
+    while (!apple.isEmpty()) {
+        result += adam.toString() + "Adam ăn táo <br>";
+        adam.eat(apple);
+        result += "Quả táo còn: " + apple.getWeight() + "<br>";
+        result += "Cân nặng của Adam tăng lên: " + adam.getWeight() + "<br>";
+        result += "Adam nói: " + adam.say("Ngon quá") + "<hr>"
+        result += eva.toString() + "Eva ăn táo <br>";
+        eva.eat(apple);
+        result += "Quả táo còn: " + apple.getWeight() + "<br>";
+        result += "Cân nặng của Eva tăng lên: " + eva.getWeight() + "<br>";
+        result += "Eva nói: " + eva.say("Cũng tạm") + "<hr>"
+    }
+
+    document.write(result);z
+</script>

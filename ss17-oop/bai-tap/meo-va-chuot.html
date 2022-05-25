@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Rat {
+        constructor(name, weight, speed, live) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.live = live;
+        }
+
+        getLive() {
+            return this.live;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        checkLive() {
+            if (this.live) {
+                return "còn sống";
+            } else {
+                return "đã chết";
+            }
+        }
+
+        say(string) {
+            return string;
+        }
+
+        getSpeed() {
+            return this.speed;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        toString() {
+            return "Chuột " + this.name + " nặng " + this.weight
+                + " có tốc độ " + this.speed + " " + this.checkLive() + "<br>";
+        }
+    }
+
+    class Cat {
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        say(string) {
+            return string;
+        }
+
+        catchTheRat(rat) {
+            if (rat.getSpeed() < this.speed) {
+                return "đã bắt được chuột ";
+            } else {
+                return rat.getName() + " đã thoát";
+            }
+        }
+
+        eatTheRat(rat) {
+            if (rat.getLive()) {
+                this.weight = this.weight + rat.getWeight();
+            } else {
+                this.weight = this.weight;
+            }
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        toString() {
+            return "Mèo " + this.name + " nặng " + this.weight
+                + " có tốc độ " + this.speed + "<br>";
+        }
+    }
+
+    let mouse1 = new Rat("Micky", 10, 20, true);
+    let mouse2 = new Rat("Jerry", 15, 40, true);
+    // let mouse3 = new Rat("Chuột cống", 15, 10, false);
+    let cat1 = new Cat("Tom", 30, 30);
+    let result = "";
+    result += mouse1.toString();
+    result += cat1.toString();
+    result += cat1.getName() + " đang đuổi bắt " + mouse1.getName() + "<br>";
+    result += cat1.getName() + " " + cat1.catchTheRat(mouse1) + mouse1.getName() + "<br>";
+    result += mouse1.getName() + " sợ quá kêu: " + mouse1.say("huhuhu") + "<br>";
+    result += cat1.getName() + " ăn thịt " + mouse1.getName() + "<br>";
+    cat1.eatTheRat(mouse1);
+    result += "Ăn xong " + cat1.getName() + " kêu " + cat1.say("hehehe") + "<br>";
+    result += "Cân nặng tăng lên: " + cat1.getWeight() + "<hr>";
+
+    result += mouse2.toString();
+    result += cat1.toString();
+    result += cat1.getName() + " đang đuổi bắt " + mouse2.getName() + "<br>";
+    result += cat1.catchTheRat(mouse2) + "<br>";
+    result += mouse2.getName() + " kêu: " + mouse2.say("đố anh bắt được em") + "<br>";
+    result += "Túc quá " + cat1.getName() + " kêu " + cat1.say("tức thiệt chứ") + "<br>";
+
+    document.write(result);
+    // document.write(cat1.getWeight())
+    // document.write(cat1.catchTheRat(mouse1));
+    // document.write(cat1.eatTheRat(mouse1));
+
+</script>
