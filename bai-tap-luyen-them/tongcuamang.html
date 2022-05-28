@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let arr = [];
+    let n = 0;
+    do {
+        n = +prompt("Nhập vào độ dài của mảng");
+        if(n>50) {
+            alert("Độ dài của mảng phải <= 50")
+        }
+    } while (n > 50);
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập vào phần tử thứ: " + i);
+    }
+    document.write("Mảng bạn nhập là: [" + arr + "]<br>");
+    let sum = 0;
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (i % 3 == 0 && arr[i] % 5 == 0) {
+            sum += arr[i];
+            count++;
+        }
+    }
+    document.write("Giá trị trung bình của phần tử chia hết cho 5 " +
+        "nằm ở vị trí chia hết cho 3 là: " + sum / count);
+</script>

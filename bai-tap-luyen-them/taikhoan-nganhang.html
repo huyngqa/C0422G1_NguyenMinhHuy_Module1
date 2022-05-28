@@ -2,9 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    class BankAccount {
+        constructor(accountId, accountName, bankName, totalMoney) {
+            this.accountId = accountId;
+            this.accountName = accountName;
+            this.bankName = bankName;
+            this.totalMoney = totalMoney;
+        }
+
+        getAccountId() {
+            return this.accountId;
+        }
+
+        setAccountId(accountId) {
+                this.accountId = accountId;
+        }
+
+        getAccountName() {
+            return this.accountName;
+        }
+
+        setAccountName(accountName) {
+            this.accountName = accountName;
+        }
+
+        getBankName() {
+            return this.bankName;
+        }
+
+        setBankName(bankName) {
+            this.bankName = bankName;
+        }
+
+        getTotalMoney() {
+            return this.totalMoney;
+        }
+
+        setTotalMoney(totalMoney) {
+            this.totalMoney = totalMoney;
+        }
+
+        toString() {
+            return "ID: " + this.accountId + "<br>"
+                + "Name: " + this.accountName + "<br>"
+                + "Bank: " + this.bankName + "<br>"
+                + "Total money: " + this.totalMoney + "<br>";
+        }
+    }
+    let accountId = ""
+    do {
+        accountId = prompt("Nhập mã id");
+    } while (isNaN(accountId) || accountId.length !== 5)
+    let accountName = prompt("Nhập tên khách hàng");
+    let bankName = prompt("Nhập tên ngân hàng");
+    let totalMoney = +prompt("Nhập số tiền có");
+
+    let accountBank = new BankAccount(accountId, accountName, bankName, totalMoney);
+    document.write(accountBank.toString());
+
+</script>

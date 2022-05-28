@@ -7,7 +7,7 @@ function checkNameToLove() {
     let count;
     let tmp = "";
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] == "" || arr[i] == " ") {
+        if (arr[i] === "" || arr[i] === " ") {
             continue;
         } else {
             count = 1;

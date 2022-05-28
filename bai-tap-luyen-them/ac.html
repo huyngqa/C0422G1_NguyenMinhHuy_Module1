@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // function swap(arr) {
+    //     let dem = arr[0];
+    //         arr[0] = arr[arr.length -1];
+    //         arr[arr.length -1] = dem ;
+    //
+    // }
+    // let arr = [2,7,4,1];
+    // swap(arr)
+    // document.write(arr)
+    function solution(arg1) {
+        let result = [];
+        let count = 1;
+        for(let i = 0; i < arg1.length;i++) {
+            if(arg1[i]!=="") {
+                count = 1;
+                for(let j = i+1; j < arg1.length; j++ ) {
+                    if(arg1[i]===arg1[j]) {
+                        arg1[j] = "";
+                        count++;
+                    }
+                }
+                result.push(count);
+            }
+        }
+        let tmp = result[0]
+        for(let i = 1; i < result.length; i++) {
+            if(tmp !== result[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    let arg1 = [1,2,3,3];
+    console.log(solution(arg1))
+</script>

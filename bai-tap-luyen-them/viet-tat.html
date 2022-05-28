@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+
+    let str = "nguyen    minh     huy"
+    document.write(abbreviation(str));
+
+    function abbreviation(str) {
+        let result = "";
+        let arr = str.split(" ");
+        if (arr.length > 1) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] !== "") {
+                    result += arr[i][0].toUpperCase();
+                }
+            }
+        } else {
+            result = "Chuỗi chỉ có một từ, không cần viết tắt";
+        }
+        return result;
+    }
+</script>
