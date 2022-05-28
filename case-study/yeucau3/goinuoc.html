@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Mua nước</h3>
+<p id="menu"></p>
+<button type="submit" onclick="buyWater();">Mua</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    let string = "Mời bạn chọn nước<br>"
+        + "1. Cà phê - giá 12000<br>"
+        + "2. Cam vắt - giá 20000<br>"
+        + "3. Nước ép cà rốt - giá 15000<br>"
+        + "4. Nước ép cà chua - giá 14000<br>"
+        + "5. Nước lọc - giá 10000<br>"
+        + "6. Nước dừa - giá 25000<br>"
+        + "7. Thoát khỏi Menu";
+    document.getElementById("menu").innerHTML = string;
+    let arrMenu = [1, 2, 3, 4, 5, 6]
+    let arrMoney = [12000, 20000, 15000, 14000, 10000, 25000];
+
+    function buyWater() {
+        let choice = 0;
+        let count = 0;
+        let result = 0;
+        while (true) {
+            choice = +prompt(string);
+            if (choice === 7) {
+                break;
+            }
+            count = +prompt("Nhập số lượng muốn mua");
+
+            result += arrMoney[arrMenu.indexOf(choice)] * count;
+        }
+        document.getElementById("result").innerHTML = "Tiền bạn mua nước là: " + result;
+    }
+
+</script>

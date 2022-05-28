@@ -9,12 +9,20 @@
 </body>
 </html>
 <script>
-    let str1
-    function differentSymbolsNaive(str) {
-        for (let i = 0; i < str.length; i++) {
-            for (let j = i + 1; j < str.length; j++) {
+    let str1 = prompt("Nhập chuỗi");
+    document.write("Chuỗi bạn nhập là: " + str1 + "<br>");
+    let result = differentSymbolsNaive(str1);
+    document.write("Số lượng kí tự khác nhau xuất hiện trong chuỗi là: " + result);
 
+    function differentSymbolsNaive(str) {
+        let arr = str.split(""); //abbac
+        let arrResult = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arrResult.indexOf(arr[i]) === -1) {
+                arrResult.push(arr[i]);
             }
         }
+        return arrResult.length;
     }
+
 </script>

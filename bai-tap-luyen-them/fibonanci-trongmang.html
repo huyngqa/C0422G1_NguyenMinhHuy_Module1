@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    let arr = [];
+    let n = +prompt("Nhập vào độ dài của mảng");
+
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập vào phần tử của mảng");
+    }
+    document.write("arr[" + arr + "]<br>");
+
+    function arrFibonacci(arr) {
+        arr = arr.sort(function (a, b) {
+            return a - b;
+        });
+        let tmp = arr[arr.length - 1];
+        let arrFibonacci = [0];
+        let result = [];
+        let f0 = 0;
+        let f1 = 1;
+        let fn = f0 + f1;
+        while (fn <= tmp) {
+            arrFibonacci.push(fn);
+            f0 = f1;
+            f1 = fn;
+            fn = f0 + f1;
+        }
+        document.write("arrFibonanci : [" + arrFibonacci + "]<br>");
+        for (let i = 0; i < arr.length; i++) {
+            if (arrFibonacci.indexOf(arr[i]) !== -1) {
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    }
+
+    document.write("[" + arrFibonacci(arr) + "]");
+
+</script>

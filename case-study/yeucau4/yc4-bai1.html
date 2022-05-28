@@ -5,11 +5,33 @@
     <title>Chuỗi</title>
 </head>
 <body>
-<h3>Bài 1</h3>
-<p>Đổi xâu kí tự</p>
-<button type="submit" onclick="frelixSumArray();">Click</button>
-<p id="result1"></p>
-<hr>
 </body>
 </html>
-<script></script>
+<script>
+    let str = prompt("Nhập vào một chuỗi");
+    str = str.toLowerCase();
+    str = str.trim();
+    let arr = str.split("");
+    for (let i = arr.length - 1; i > 0; i--) {
+        if (arr[i] !== " " && arr[i - 1] === " ") {
+            arr[i] = arr[i].toUpperCase();
+        }
+        if (arr[i] === " " && arr[i - 1] === " ") {
+            arr.splice(i, 1);
+        }
+    }
+    arr[0] = arr[0].toUpperCase();
+    console.log(arr);
+    let result = arr.join("");
+    arr = result.split(" ");
+    let max = arr[0].length;
+    let index = 0;
+    for (let i = 1; i < arr.length; i++) {
+        if (max < arr[i].length) {
+            max = arr[i].length;
+            index = i;
+        }
+    }
+    document.write(result);
+    document.write("<br>Từ dài nhất là: " + arr[index] + " nằm ở vị trí: " + index);
+</script>
