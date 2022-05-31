@@ -9,7 +9,7 @@
 </body>
 </html>
 <script>
-    let arr = []
+    let arr = [];
     inputArray2D(arr);
 
     document.write("Phần tử trong mảng là: " + arr + "<br>");
@@ -22,19 +22,17 @@
 
     document.write("Bài3: Giá trị nhỏ nhất trong mảng là: " + findMinArray2D(arr));
 
-
     function inputArray2D(arr) {
         let n = +prompt("Nhập đồ dài n");
         let m = +prompt("Nhập độ dài m");
-        let arr1 = [];
         for (let i = 0; i < n; i++) {
-            arr1 = []
+            arr[i] = []
             for (let j = 0; j < m; j++) {
-                arr1[j]= +prompt("nhập phần từ thứ [" + i + "][" + j + "]");
+                arr[i][j] = +prompt("nhập phần từ thứ [" + i + "][" + j + "]");
             }
-            arr[i] = arr1
         }
     }
+
     //bài 1: hàm tính tổng số chẵn của mảng 2 chiều
     function sumEvenNumberArray2D(arr) {
         let sum = 0;
@@ -80,7 +78,7 @@
         let max = arr[0][0];
         for (let i = 0; i < arr.length; i++) {
             for (let j = 0; j < arr[i].length; j++) {
-                if(max < arr[i][j]) {
+                if (max < arr[i][j]) {
                     max = arr[i][j];
                 }
             }
@@ -93,7 +91,7 @@
         let min = arr[0][0];
         for (let i = 0; i < arr.length; i++) {
             for (let j = 0; j < arr[i].length; j++) {
-                if(min > arr[i][j]) {
+                if (min > arr[i][j]) {
                     min = arr[i][j];
                 }
             }
