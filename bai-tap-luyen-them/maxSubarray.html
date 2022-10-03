@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let arr = [1, -1, 2, 3, -1];
+    document.write(maxSubarray(arr));
+
+    function maxSubarray(inputArray) {
+        let sum = 0;
+        let max = 0;
+        for (let i = 0; i < inputArray.length; i++) {
+            if (sum + inputArray[i] > 0) {
+                sum += inputArray[i];
+            } else {
+                sum = 0;
+            }
+            if (sum > max) {
+                max = sum;
+            }
+        }
+        return max;
+    }
+</script>

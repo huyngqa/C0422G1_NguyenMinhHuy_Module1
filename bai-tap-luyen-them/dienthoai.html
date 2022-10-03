@@ -2,9 +2,118 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        th, td {
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
-$END$
+<button onclick="create(arrPhone);">Tạo mới</button>
+<p id="display"></p>
 </body>
 </html>
+<script>
+    class Phone {
+        constructor(name, price, color, producer) {
+            this.name = name;
+            this.price = price;
+            this.color = color;
+            this.producer = producer;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setPrice(price) {
+            this.price = price;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        setColor(color) {
+            this.color = color;
+        }
+
+        getColor() {
+            return this.color;
+        }
+
+        setProducer(producer) {
+            this.producer = producer;
+        }
+
+        getProducer() {
+            return this.producer;
+        }
+    }
+
+    let iPhone = new Phone("IP Promax", 5000, "Xanh lá dương", "Apple");
+    let xiaomi = new Phone("Redmi Note 11", 3000, "Hồng cánh chuối", "Xiaomi");
+    let arrPhone = [iPhone, xiaomi];
+
+    function display(arr) {
+        let result = "<table>" +
+            "<tr><th>Tên</th>" +
+            "<th>Giá</th>" +
+            "<th>Màu sắc</th>" +
+            "<th>Nhà sản xuất</th>" +
+            "<th colspan='2'>Chức năng</th></tr>";
+        for (let i = 0; i < arr.length; i++) {
+            result += "<tr><td>" + arr[i].getName() + "</td>"
+                + "<td>" + arr[i].getPrice() + "</td>"
+                + "<td>" + arr[i].getColor() + "</td>"
+                + "<td>" + arr[i].getProducer() + "</td>"
+                + "<td><button onclick='edit(" + i + ")'>Update</button></td>"
+                + "<td><button onclick='remove(" + i + ")'>Delete</button></td>"
+                + "</tr>";
+        }
+        result += "</table>";
+        document.getElementById("display").innerHTML = result;
+    }
+
+    display(arrPhone);
+
+    function create(arr) {
+        let name = prompt("Nhập tên điện thoại");
+        let price = prompt("Nhập giá điện thoại");
+        let color = prompt("Nhập màu điện thoại");
+        let producer = prompt("Nhập tên nhà sản xuất điện thoại");
+
+        let newPhone = new Phone(name, price, color, producer);
+        arr.push(newPhone);
+        display(arr);
+    }
+
+    function edit(index) {
+        arrPhone[index].setName(prompt("Cập nhật tên điện thoại"));
+        arrPhone[index].setPrice(prompt("Cập nhật giá điện thoại"));
+        arrPhone[index].setColor(prompt("Cập nhật màu sắc điện thoại"));
+        arrPhone[index].setProducer(prompt("Cập nhật tên nhà sản xuất điện thoại"));
+        display(arrPhone);
+    }
+
+    function remove(index) {
+        if(confirm("Bạn có muốn xoá không")) {
+            arrPhone.splice(index, 1);
+            alert("Bạn đã xoá thành công");
+        } else {
+            alert("Bạn suy nghĩ rất thấu đáo");
+        }
+        display(arrPhone);
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = 0;
+    do {
+        number = parseInt(prompt("Nhập vào 1 số nguyên dương"));
+        if (number <= 0|| isNaN(number)) {
+            alert("Bạn phải nhập số nguyên dương");
+        }
+    } while (number <= 0 || isNaN(number))
+    document.write(isPerfectNumber(number) + "");
+
+    function isPerfectNumber(number) {
+        let sum = 0;
+        for (let i = 1; i < number; i++) {
+            if (number % i === 0) {
+                sum += i;
+            }
+        }
+        return sum === number;
+    }
+</script>
+</body>
+</html>

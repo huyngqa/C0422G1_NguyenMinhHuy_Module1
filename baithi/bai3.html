@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "";
+    let month = "";
+    let year = "";
+    let tmp = "";
+    do {
+        str = prompt("Nhập vào tháng và năm");
+        month = str.slice(0, 2);
+        year = str.slice(3, str.length);
+        tmp = str.slice(2, 3);
+        if (tmp !== "/" || isNaN(month) || month > 12 || month < 1 || year.length !== 4 || isNaN(year)) {
+            alert("Định dạng ngày tháng bắt buộc: MM/yyyy");
+        }
+    } while (tmp !== "/" || isNaN(month) || month > 12 || month < 1 || year.length !== 4 || isNaN(year));
+    document.write(checkMonYear(str));
+
+    function checkMonYear(str) {
+        let month = str.slice(0, 2);
+        let year = str.slice(3, 7)
+        let result = "";
+        switch (month) {
+            case"01":
+            case"03":
+            case"05":
+            case"07":
+            case"10":
+            case"12":
+                result = "31";
+                break;
+            case"04":
+            case"06":
+            case"09":
+            case"11":
+                result = "30";
+                break;
+            case"02":
+                if (isLeapYear(year)) {
+                    result = "29";
+                } else {
+                    result = "28";
+                }
+        }
+        return result;
+    }
+
+    function isLeapYear(year) {
+        if (year % 4 === 0) {
+            if (year % 100 === 0) {
+                if (year % 400 === 0) {
+                    return true;
+                }
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+</script>
+</body>
+</html>

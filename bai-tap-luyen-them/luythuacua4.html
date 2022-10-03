@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    function isPowerOfFour(num) {
+        if (num < 4 || num % 4 != 0)
+            return false;
+        else if (num == 4)
+            return true;
+        return isPowerOfFour(num / 4);
+    }
+
+    let num = +prompt("Nhập vào 1 số");
+    if (isPowerOfFour(num)) document.write(num + " là luỹ thừa của 4");
+    else document.write(num + " không phải là luỹ thừa của 4");
+</script>

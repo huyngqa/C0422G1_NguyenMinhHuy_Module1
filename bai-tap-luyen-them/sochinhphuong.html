@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPerfertSquare(num) {
+        if (num === 0 || num === 1) {
+            return true;
+        }
+        for (let i = 0; i <=Math.sqrt(num); i++) {
+            if (i * i == num) {
+                return true;
+            }
+        }
+        return false;
+    }
+    let number = +prompt("Nhập vào 1 số");
+    if(isPerfertSquare(number)) {
+        document.write("Là số chính phương");
+    } else {
+        document.write("Không phải là số chính phương");
+    }
+</script>
+</body>
+</html>

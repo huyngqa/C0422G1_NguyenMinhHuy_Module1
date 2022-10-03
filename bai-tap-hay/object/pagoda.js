@@ -1,14 +1,14 @@
-class Padoga {
-    constructor(namePadoga, location, moneyBox) {
-        this.name = name;
+class Pagoda {
+    constructor(namePagoda, location, moneyBox) {
+        this.namePagoda = namePagoda;
         this.location = location;
         this.moneyBox = moneyBox;
     }
-    getName() {
-        return this.name;
+    getNamePagoda() {
+        return this.namePagoda;
     }
-    setName(name) {
-        this.name = name;
+    setNamePagoda(namePagoda) {
+        this.namePagoda = namePagoda;
     }
     getLocation() {
         return this.location;
@@ -18,5 +18,11 @@ class Padoga {
     }
     getMoneyBox() {
         return this.moneyBox;
+    }
+    setMoneyBox(moneyBox) {
+        this.moneyBox = moneyBox;
+    }
+    increaseMoney(human) {
+        this.moneyBox = this.moneyBox + human.getMoney();
     }
 }

@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
+<script>
+    let input = prompt("Nhập vào dãy số");
+    document.write("Hiệu của tổng các sổ lẻ và tổng các số chẵn là: " + compareSumOfDigits(input));
+    function compareSumOfDigits(input) {
+        let sumEven = 0;
+        let sumOdd = 0;
+        for (let i = 0; i < input.length; i++) {
+            if (+input[i] % 2 === 0) {
+                sumEven += parseInt(input[i]);
+            } else {
+                sumOdd += parseInt(input[i]);
+            }
+        }
+        return sumOdd - sumEven;
+    }
+</script>

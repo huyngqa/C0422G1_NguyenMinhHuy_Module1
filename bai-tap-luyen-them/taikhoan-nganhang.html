@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        th, td {
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
-
+<button type="button" onclick="create(arrBank);">Thêm tài khoản</button>
+<p id="display"></p>
 </body>
 </html>
 <script>
@@ -22,7 +34,7 @@
         }
 
         setAccountId(accountId) {
-                this.accountId = accountId;
+            this.accountId = accountId;
         }
 
         getAccountName() {
@@ -48,23 +60,66 @@
         setTotalMoney(totalMoney) {
             this.totalMoney = totalMoney;
         }
-
-        toString() {
-            return "ID: " + this.accountId + "<br>"
-                + "Name: " + this.accountName + "<br>"
-                + "Bank: " + this.bankName + "<br>"
-                + "Total money: " + this.totalMoney + "<br>";
-        }
     }
-    let accountId = ""
-    do {
-        accountId = prompt("Nhập mã id");
-    } while (isNaN(accountId) || accountId.length !== 5)
-    let accountName = prompt("Nhập tên khách hàng");
-    let bankName = prompt("Nhập tên ngân hàng");
-    let totalMoney = +prompt("Nhập số tiền có");
 
-    let accountBank = new BankAccount(accountId, accountName, bankName, totalMoney);
-    document.write(accountBank.toString());
+    function display(arr) {
+        let result = "<table>" +
+            "<tr><th>ID</th>" +
+            "<th>Tên</th>" +
+            "<th>Tên ngân hàng</th>" +
+            "<th>Số tiền trong tài khoản</th>" +
+            "<th colspan='2'>Chức năng</th></tr>";
+        for (let i = 0; i < arr.length; i++) {
+            result += "<tr><td>" + arr[i].getAccountId() + "</td>"
+                + "<td>" + arr[i].getAccountName() + "</td>"
+                + "<td>" + arr[i].getBankName() + "</td>"
+                + "<td>" + arr[i].getTotalMoney() + "</td>"
+                + "<td><button onclick='edit(" + i + ")'>Update</button></td>"
+                + "<td><button onclick='remove(" + i + ")'>Delete</button></td>"
+                + "</tr>";
+        }
+        result += "</table>"
+        document.getElementById("display").innerHTML = result;
+    }
+
+    let arrBank = [];
+    let huyAccount = new BankAccount("00001", "huy", "TCB", 100000);
+    let aAccount = new BankAccount("00002", "a", "TCB", 50000);
+    arrBank.push(huyAccount, aAccount);
+    display(arrBank);
+
+    function create(arr) {
+        let accountId = ""
+        do {
+            accountId = prompt("Nhập mã id\n Chú ý ID phải là 5 số");
+            if (isNaN(accountId) || accountId.length !== 5) {
+                alert("Vui lòng nhập ID là 5 số!");
+            }
+        } while (isNaN(accountId) || accountId.length !== 5)
+        let accountName = prompt("Nhập tên khách hàng");
+        let bankName = prompt("Nhập tên ngân hàng");
+        let totalMoney = 0
+        do {
+            totalMoney = +prompt("Nhập số tiền");
+            if (isNaN(totalMoney)) {
+                alert("Vui lòng nhập số!");
+            }
+        } while (isNaN(totalMoney));
+        let newAccount = new BankAccount(accountId, accountName, bankName, totalMoney);
+        arr.push(newAccount);
+        display(arr);
+    }
+
+    function edit(index) {
+        arrBank[index].setAccountId(prompt("Cập nhật ID"));
+        arrBank[index].setAccountName(prompt("Cập nhật tên"));
+        arrBank[index].setBankName(prompt("Cập nhật tên ngân hàng"));
+        arrBank[index].setTotalMoney(+prompt("Cập nhật số tiền"));
+        display(arrBank);
+    }
+    function remove(index) {
+        arrBank.splice(index, 1);
+        display(arrBank);
+    }
 
 </script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [1, 3, 5, 7, 9];
+    arr.sort(function (a,b) {
+        return b - a;
+    })
+    let max = arr[0];
+    let min = arr[arr.length - 1];
+    let sumMax = 0;
+    let sumMin = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (max == arr[i]) {
+            sumMax+=arr[i]
+            continue;
+        }
+        if (min == arr[i]) {
+            sumMin += arr[i];
+            continue;
+        }
+        sumMax += arr[i];
+        sumMin += arr[i];
+    }
+    document.write("Tổng 4 số lớn nhất: " + sumMax);
+    document.write("<br>Tổng 4 số nhỏ nhất: " + sumMin);
+</script>
+</body>
+</html>

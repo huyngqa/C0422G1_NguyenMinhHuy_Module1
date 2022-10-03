@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Nhập vào 1 số");
+// lấy số cần phân tích chia cho các số nguyên tố từ 2 đến chính nó
+    function factorize(num) {
+        let result = "";
+        for (let i = 2; i <= num; i++) {
+            while (num % i === 0) {
+                num /= i;
+                result += i + " ";
+            }
+        }
+        return result;
+    }
+    document.write(factorize(number));
+</script>
+</body>
+</html>

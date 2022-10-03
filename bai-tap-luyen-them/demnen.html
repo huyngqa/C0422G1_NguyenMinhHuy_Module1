@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let arr = [4,4,1,4,3];
+    document.write(birthdayCakeCandles(arr));
+    function birthdayCakeCandles(candles) {
+        let count = 0;
+        candles.sort(function (a,b) {
+            return b - a;
+        });
+        let max = candles[0];
+        for (let i = 0; i < candles.length; i++) {
+            if (candles[i] == max) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        return count;
+    }
+
+</script>

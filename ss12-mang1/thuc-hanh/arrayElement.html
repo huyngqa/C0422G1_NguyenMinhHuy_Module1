@@ -6,8 +6,8 @@
 </head>
 <body>
     <input type="text" id="txtValue"/>
-    <input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
-    <input type="button" id="btnDisplay" value="Display" onclick="display_array();"/>
+    <button type="button" onclick="add_element_to_array()";>Add</button>
+    <button type="button" onclick="display_array()";>Display</button>
 <div id="result"></div>
 
 </body>
@@ -19,7 +19,7 @@
         array[x] = document.getElementById("txtValue").value;
         alert("Element " + array[x] + " added at index " + x);
         x++;
-        document.getElementById("txtValue ").value = "";
+        document.getElementById("txtValue").value = "";
     }
     function display_array() {
         let result = "<hr>";
@@ -28,4 +28,5 @@
         }
         document.getElementById("result").innerHTML = result;
     }
+    array.splice()
 </script>

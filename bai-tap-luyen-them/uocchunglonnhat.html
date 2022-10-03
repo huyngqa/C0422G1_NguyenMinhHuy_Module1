@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function greatestCommonDivisor(a, b) {
+    //     if (a == 0 || b == 0) {
+    //         return a + b;
+    //     }
+    //     while (a !== b) {
+    //         if (a > b) {
+    //             a -= b;
+    //         } else {
+    //             b -= a;
+    //         }
+    //     }
+    //     return a;
+    // }
+
+    function greatestCommonDivisor(a, b) {
+        while (a * b !== 0) {
+            if (a > b) {
+                a %= b;
+            } else {
+                b %= a;
+            }
+        }
+        return a + b;
+        // if (b == 0) return a;
+        // return greatestCommonDivisor(b, a % b);
+    }
+
+    function leastCommonMultiple(a, b) {
+        return a * b / greatestCommonDivisor(a, b);
+    }
+
+    let n1 = +prompt("Nhập số a");
+    let n2 = +prompt("Nhập số b");
+    document.write("a: " + n1)
+    document.write("<br>b: " + n2)
+
+    // document.write("Ước chung lớn nhất: " + greatestCommonDivisor(n1, n2));
+    document.write("<br>Bội chung nhỏ nhất: " + leastCommonMultiple(n1, n2));
+</script>
+</body>
+</html>
